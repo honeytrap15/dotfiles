@@ -1,0 +1,48 @@
+
+# 履歴
+HISTFILE=~/.zsh_history
+HISTSIZE=10000
+SAVEHIST=10000
+setopt hist_ignore_dups
+setopt hist_ignore_all_dups
+setopt share_history
+
+# 補完
+autoload -Uz compinit
+compinit -u
+if [ -e /usr/local/share/zsh-completions ]; then
+  fpath=(/usr/local/share/zsh-completions $fpath)
+fi
+zstyle ':completion:*' matcher-list 'm:{a-z}={A-Z}'
+setopt list_packed
+zstyle ':completion:*' list-colors ''
+
+# スペル
+setopt correct
+
+# ビープ音
+setopt no_beep
+
+# エイリアス
+alias ls='ls -aF'
+alias ll='ls -l'
+alias vim='nvim'
+
+export CLICOLOR=1
+export LSCOLORS=DxGxcxdxCxegedabagacad
+
+# tmux
+if [[ ! -n $TMUX ]]; then
+  # get the IDs
+  ID="`tmux list-sessions`"
+  if [[ -z "$ID" ]]; then
+    tmux new-session && exit
+  fi
+  create_new_session="Create New Session"
+  ID="$ID\n${create_new_session}:"
+  ID="`echo $ID | $PERCOL | cut -d: -f1`"
+  if [[ "$ID" = "${create_new_session}" ]]; then
+    tmux new-session && exit
+  fi
+  tmux attach-session -t "$ID"
+fi
