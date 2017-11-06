@@ -29,3 +29,6 @@ repo = 'moll/vim-node'
 
 [[plugins]]
 repo = 'mxw/vim-jsx'
+
+[[plugins]]
+repo = 'MaxMEllon/vim-jsx-pretty'
