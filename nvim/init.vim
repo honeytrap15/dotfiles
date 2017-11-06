@@ -82,5 +82,9 @@ else
   let g:NERDTreeShowBookmarks=1
   autocmd vimenter * NERDTree|normal gg3j
   nnoremap <C-n> :NERDTreeFocus<Enter>
+
 endif
+
+" terminal
+tnoremap <silent> <ESC> <C-\><C-n>
 
