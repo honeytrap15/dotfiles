@@ -34,6 +34,13 @@ set expandtab
 set tabstop=2
 set shiftwidth=2
 
+" tab config
+map <C-t> :tabnew<Return>
+map <C-q> :tabclose<Return>
+map <C-h> :tabprevious<Return>
+map <C-l> :tabnext<Return>
+
+
 " dein config
 function s:setup_dein()
   if &compatible
@@ -82,5 +89,9 @@ else
   let g:NERDTreeShowBookmarks=1
   autocmd vimenter * NERDTree|normal gg3j
   nnoremap <C-n> :NERDTreeFocus<Enter>
+
 endif
+
+" terminal
+tnoremap <silent> <ESC> <C-\><C-n>
 

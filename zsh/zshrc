@@ -24,7 +24,6 @@ setopt correct
 setopt no_beep
 
 # エイリアス
-alias ls='ls -aF'
 alias ll='ls -l'
 alias vim='nvim'
 
@@ -45,4 +44,10 @@ if [[ ! -n $TMUX ]]; then
     tmux new-session && exit
   fi
   tmux attach-session -t "$ID"
+fi
+
+# mac only
+if [[ $HOME/.nodebrew ]]; then
+  nodebrew use 8.9.0 > /dev/null
+  export PATH=$PATH:$HOME/.nodebrew/current/bin
 fi
