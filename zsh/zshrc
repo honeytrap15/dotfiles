@@ -47,7 +47,7 @@ if [[ ! -n $TMUX ]]; then
 fi
 
 # mac only
-if [[ $HOME/.nodebrew ]]; then
+if [[ -e $HOME/.nodebrew ]]; then
   nodebrew use 8.9.0 > /dev/null
   export PATH=$PATH:$HOME/.nodebrew/current/bin
 fi
