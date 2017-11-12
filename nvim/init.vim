@@ -19,6 +19,7 @@ set smartindent
 set showmatch
 set laststatus=2
 set wildmode=list:longest
+inoremap <C-a> <Esc>v gg <S-g>
 
 " search config
 set ignorecase
