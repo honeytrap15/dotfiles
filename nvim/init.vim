@@ -90,9 +90,28 @@ else
   let g:NERDTreeShowBookmarks=1
   autocmd vimenter * NERDTree|normal gg3j
   nnoremap <C-n> :NERDTreeFocus<Enter>
+  nnoremap <C-c> :NERDTreeToggle<Enter>
+
+  " Template
+  augroup MyAutoCmd
+    autocmd MyAutoCmd User plugin-template-loaded call s:template_keywords()
+    function! s:template_keywords()
+      silent! %s/<+DATE+>/\=strftime('%Y-%m-%d')/g
+      silent! %s/<+FILENAME+>/\=expand('%:r')/g
+      silent! %s/<+FILENAME_UPPER+>/\=toupper(expand('%:r'))/g
+      silent! %s/<+DIR_NAME+>/\=toupper(expand('%:d'))/g
+    endfunction
+    autocmd MyAutoCmd User plugin-template-loaded
+          \   if search('<+CURSOR+>')
+          \ |   silent! execute 'normal! "_da>'
+          \ | endif
+  augroup END
 
 endif
 
 " terminal
 tnoremap <silent> <ESC> <C-\><C-n>
+
+" golang
+let g:go_fmt_command = "goimports"
 

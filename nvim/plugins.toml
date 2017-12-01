@@ -32,3 +32,13 @@ repo = 'mxw/vim-jsx'
 
 [[plugins]]
 repo = 'MaxMEllon/vim-jsx-pretty'
+
+[[plugins]]
+repo = 'fatih/vim-go'
+
+[[plugins]]
+repo = 'thinca/vim-template'
+hook_add = '''
+let g:template_basedir = '~/.config/nvim'
+let g:template_free_pattern = 'template'
+'''
