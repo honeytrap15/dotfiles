@@ -1,4 +1,6 @@
 
+export SHELL="/usr/bin/zsh"
+
 # 履歴
 HISTFILE=~/.zsh_history
 HISTSIZE=10000
@@ -24,6 +26,7 @@ setopt correct
 setopt no_beep
 
 # エイリアス
+alias ls='ls --color=auto'
 alias ll='ls -l'
 alias vim='nvim'
 
@@ -56,3 +59,14 @@ fi
 export GOPATH=$HOME/go
 export GOROOT=$( go env GOROOT )
 export PATH=$PATH:$GOPATH/bin
+
+# ros
+if [[ -e /opt/ros ]]; then
+  source /opt/ros/kinetic/setup.zsh
+fi
+if [[ -e /home/groove/catkin_ws/devel ]]; then
+  source /home/groove/catkin_ws/devel/setup.zsh
+fi
+
+# git
+alias delete-merged-branch="git branch --merged | grep -v '*' | xargs -I % git branch -d %"

@@ -42,3 +42,9 @@ hook_add = '''
 let g:template_basedir = '~/.config/nvim'
 let g:template_free_pattern = 'template'
 '''
+
+[[plugins]]
+repo = 'freeo/vim-kalisi'
+
+[[plugins]]
+repo = 'miyakogi/seiya.vim'

@@ -107,6 +107,9 @@ else
           \ | endif
   augroup END
 
+  " Seiya vim
+  let g:seiya_auto_enable=1
+
 endif
 
 " terminal
