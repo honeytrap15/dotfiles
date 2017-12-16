@@ -99,7 +99,6 @@ else
       silent! %s/<+DATE+>/\=strftime('%Y-%m-%d')/g
       silent! %s/<+FILENAME+>/\=expand('%:r')/g
       silent! %s/<+FILENAME_UPPER+>/\=toupper(expand('%:r'))/g
-      silent! %s/<+DIR_NAME+>/\=toupper(expand('%:d'))/g
     endfunction
     autocmd MyAutoCmd User plugin-template-loaded
           \   if search('<+CURSOR+>')

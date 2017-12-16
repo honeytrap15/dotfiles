@@ -64,9 +64,6 @@ export PATH=$PATH:$GOPATH/bin
 if [[ -e /opt/ros ]]; then
   source /opt/ros/kinetic/setup.zsh
 fi
-if [[ -e /home/groove/catkin_ws/devel ]]; then
-  source /home/groove/catkin_ws/devel/setup.zsh
-fi
 
 # git
 alias delete-merged-branch="git branch --merged | grep -v '*' | xargs -I % git branch -d %"
