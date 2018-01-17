@@ -1,6 +1,9 @@
 
 export SHELL="/usr/bin/zsh"
 
+# curl用
+setopt nonomatch
+
 # 履歴
 HISTFILE=~/.zsh_history
 HISTSIZE=10000
@@ -26,7 +29,6 @@ setopt correct
 setopt no_beep
 
 # エイリアス
-alias ls='ls --color=auto'
 alias ll='ls -l'
 alias vim='nvim'
 
