@@ -41,6 +41,10 @@ map <C-q> :tabclose<Return>
 map <C-h> :tabprevious<Return>
 map <C-l> :tabnext<Return>
 
+" filetype
+au BufNewFile,BufRead *.pu setf plantuml
+
+
 
 " dein config
 function s:setup_dein()

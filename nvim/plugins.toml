@@ -48,3 +48,6 @@ repo = 'freeo/vim-kalisi'
 
 [[plugins]]
 repo = 'miyakogi/seiya.vim'
+
+[[plugins]]
+repo = 'aklt/plantuml-syntax'

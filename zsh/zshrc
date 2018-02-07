@@ -29,8 +29,10 @@ setopt correct
 setopt no_beep
 
 # エイリアス
+alias ls='ls --color'
 alias ll='ls -l'
 alias vim='nvim'
+alias pbcopy='xsel -bi'
 
 export CLICOLOR=1
 export LSCOLORS=DxGxcxdxCxegedabagacad
@@ -69,3 +71,6 @@ fi
 
 # git
 alias delete-merged-branch="git branch --merged | grep -v '*' | xargs -I % git branch -d %"
+
+export NVM_DIR="/home/hiro/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # This loads nvm
