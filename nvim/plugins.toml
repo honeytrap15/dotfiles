@@ -51,3 +51,15 @@ repo = 'miyakogi/seiya.vim'
 
 [[plugins]]
 repo = 'aklt/plantuml-syntax'
+
+[[plugins]]
+repo = 'tpope/vim-fugitive'
+
+[[plugins]]
+repo = 'vim-airline/vim-airline'
+
+[[plugins]]
+repo = 'vim-airline/vim-airline-themes'
+
+[[plugins]]
+repo = 'baabelfish/nvim-nim'

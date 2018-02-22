@@ -19,6 +19,7 @@ set smartindent
 set showmatch
 set laststatus=2
 set wildmode=list:longest
+set ambiwidth=double
 inoremap <C-a> <Esc>v gg <S-g>
 
 " search config
@@ -43,8 +44,6 @@ map <C-l> :tabnext<Return>
 
 " filetype
 au BufNewFile,BufRead *.pu setf plantuml
-
-
 
 " dein config
 function s:setup_dein()
@@ -113,6 +112,21 @@ else
   " Seiya vim
   let g:seiya_auto_enable=1
 
+  " airline
+  set laststatus=2
+  let g:airline_powerline_fonts = 1
+  let g:airline#extensions#tabline#enabled = 1
+  let g:airline#extensions#tabline#buffer_idx_mode = 1
+  let g:airline#extensions#whitespace#mixed_indent_algo = 1
+  let g:airline_theme = 'vice'
+
+  if !exists('g:airline_symbols')
+    let g:airline_symbols = {}
+  endif
+
+  " powerline symbols
+  let g:airline_symbols.branch = ''
+
 endif
 
 " terminal
@@ -120,4 +134,3 @@ tnoremap <silent> <ESC> <C-\><C-n>
 
 " golang
 let g:go_fmt_command = "goimports"
-

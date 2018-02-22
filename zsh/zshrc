@@ -64,6 +64,9 @@ export GOPATH=$HOME/go
 export GOROOT=$( go env GOROOT )
 export PATH=$PATH:$GOPATH/bin
 
+# nimlang
+export PATH=$PATH:~/.nimble/bin
+
 # ros
 if [[ -e /opt/ros ]]; then
   source /opt/ros/kinetic/setup.zsh
