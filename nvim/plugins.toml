@@ -63,3 +63,18 @@ repo = 'vim-airline/vim-airline-themes'
 
 [[plugins]]
 repo = 'baabelfish/nvim-nim'
+
+[[plugins]]
+repo = 'mhartington/nvim-typescript'
+
+[[plugins]]
+repo = 'ianks/vim-tsx'
+
+[[plugins]]
+repo = 'baabelfish/nvim-nim'
+
+[[plugins]]
+repo = 'itchyny/lightline.vim'
+
+[[plugins]]
+repo = 'leafgarland/typescript-vim'

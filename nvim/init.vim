@@ -126,6 +126,8 @@ else
 
   " powerline symbols
   let g:airline_symbols.branch = ''
+  " nim
+  let g:nvim_nim_highlighter_semantics=1
 
 endif
 

@@ -29,7 +29,14 @@ setopt correct
 setopt no_beep
 
 # エイリアス
-alias ls='ls --color'
+case ${OSTYPE} in
+  darwin*)
+  alias ls='ls -G'
+    ;;
+  linux*)
+  alias ls='ls --color'
+    ;;
+esac
 alias ll='ls -l'
 alias vim='nvim'
 alias pbcopy='xsel -bi'
