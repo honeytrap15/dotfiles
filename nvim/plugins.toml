@@ -2,17 +2,10 @@
 repo = 'Shougo/dein.vim'
 
 [[plugins]]
-repo = 'Shougo/neosnippet.vim'
-
-[[plugins]]
 repo = 'Shougo/neosnippet-snippets'
 
 [[plugins]]
 repo = 'cespare/vim-toml'
-
-[[plugins]]
-repo = 'Shougo/deoplete.nvim'
-on_event = 'InsertCharPre'
 
 [[plugins]]
 repo = 'jonathanfilip/vim-lucius'
@@ -62,9 +55,6 @@ repo = 'vim-airline/vim-airline'
 repo = 'vim-airline/vim-airline-themes'
 
 [[plugins]]
-repo = 'baabelfish/nvim-nim'
-
-[[plugins]]
 repo = 'mhartington/nvim-typescript'
 
 [[plugins]]
@@ -78,3 +68,6 @@ repo = 'itchyny/lightline.vim'
 
 [[plugins]]
 repo = 'leafgarland/typescript-vim'
+
+[[plugins]]
+repo = 'rhysd/vim-clang-format'

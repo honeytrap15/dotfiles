@@ -72,7 +72,7 @@ export GOROOT=$( go env GOROOT )
 export PATH=$PATH:$GOPATH/bin
 
 # nimlang
-export PATH=$PATH:~/.nimble/bin
+export PATH=$PATH:~/.nimble/bin:/sbin:/usr/sbin
 
 # ros
 if [[ -e /opt/ros ]]; then

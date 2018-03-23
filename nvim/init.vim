@@ -41,6 +41,7 @@ map <C-t> :tabnew<Return>
 map <C-q> :tabclose<Return>
 map <C-h> :tabprevious<Return>
 map <C-l> :tabnext<Return>
+map <C-y> :highlight Normal ctermfg=grey ctermbg=black<Return>
 
 " filetype
 au BufNewFile,BufRead *.pu setf plantuml
@@ -53,8 +54,8 @@ function s:setup_dein()
   set runtimepath+=~/.config/nvim/dein/repos/github.com/Shougo/dein.vim
   if dein#load_state($HOME . '/.config/nvim/dein')
     call dein#begin($HOME . '/.config/nvim/dein')
-    let s:toml = '~/.config/nvim/plugins.toml'
-    call dein#load_toml(s:toml, {'lazy': 0})
+    call dein#load_toml('~/.config/nvim/plugins.toml', {'lazy': 0})
+    call dein#load_toml('~/.config/nvim/lazy.toml', {'lazy': 1})
     call dein#end()
     call dein#save_state()
   endif
@@ -64,30 +65,15 @@ function s:setup_dein()
   endif
 endfunction
 
-" deoplete config
-function s:setup_deoplete()
-  let g:deoplete#enable_at_startup = 1
-  let g:deoplete#auto_complete_delay = 100
-  let g:deoplete#auto_complete_start_length = 1
-  let g:deoplete#enable_camel_case = 0
-  let g:deoplete#enable_ignore_case = 0
-  let g:deoplete#enable_refresh_always = 0
-  let g:deoplete#enable_smart_case = 1
-  let g:deoplete#file#enable_buffer_path = 1
-  let g:deoplete#max_list = 10000
-  inoremap <expr><tab> pumvisible() ? "\<C-n>" :  neosnippet#expandable_or_jumpable() ? "\<Plug>(neosnippet_expand_or_jump)" : "\<tab>"
-endfunction
-
 " startup script
 if isdirectory($HOME . '/.config/nvim/dein') == 0
   echohl WarningMsg | echo "Not install dein. Execute setup script" | echohl None
 else
   " only installed dein and plugins
   call s:setup_dein()
-  call s:setup_deoplete()
 
   " scheme
-  colorscheme lucius
+  colorscheme torte
 
   " NERDTree
   let g:NERDTreeShowBookmarks=1
@@ -128,6 +114,9 @@ else
   let g:airline_symbols.branch = ''
   " nim
   let g:nvim_nim_highlighter_semantics=1
+
+  " ClangFormat
+  nnoremap <S-l> :ClangFormat<Return>
 
 endif
 
