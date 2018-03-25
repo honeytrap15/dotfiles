@@ -1,4 +1,4 @@
-
+export PROMPT="%# "
 export SHELL="/usr/bin/zsh"
 
 # curl用
@@ -84,3 +84,5 @@ alias delete-merged-branch="git branch --merged | grep -v '*' | xargs -I % git b
 
 export NVM_DIR="/home/hiro/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # This loads nvm
+
+cd $HOME
