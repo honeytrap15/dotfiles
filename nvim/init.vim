@@ -41,7 +41,7 @@ map <C-t> :tabnew<Return>
 map <C-q> :tabclose<Return>
 map <C-h> :tabprevious<Return>
 map <C-l> :tabnext<Return>
-map <C-y> :highlight Normal ctermfg=grey ctermbg=black<Return>
+map <C-y> :highlight Normal ctermbg=240<Return>
 
 " filetype
 au BufNewFile,BufRead *.pu setf plantuml
