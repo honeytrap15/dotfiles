@@ -1,9 +1,4 @@
-#!/usr/bin/env python
-# -*- coding: utf-8 -*-
-#
-# File: <+FILENAME+>
-# Date: <+DATE+>
-# 
+#!/usr/bin/env python3
 
 import sys
 
