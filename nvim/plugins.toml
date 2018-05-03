@@ -8,6 +8,18 @@ repo = 'Shougo/neosnippet-snippets'
 repo = 'cespare/vim-toml'
 
 [[plugins]]
+repo = 'Haron-Prime/Antares'
+
+[[plugins]]
+repo = 'AlessandroYorba/Alduin'
+
+[[plugins]]
+repo = 'raphamorim/lucario'
+
+[[plugins]]
+repo = 'tomasr/molokai'
+
+[[plugins]]
 repo = 'jonathanfilip/vim-lucius'
 
 [[plugins]]

@@ -41,7 +41,6 @@ map <C-t> :tabnew<Return>
 map <C-q> :tabclose<Return>
 map <C-h> :tabprevious<Return>
 map <C-l> :tabnext<Return>
-map <C-y> :highlight Normal ctermbg=240<Return>
 
 " filetype
 au BufNewFile,BufRead *.pu setf plantuml
@@ -73,7 +72,7 @@ else
   call s:setup_dein()
 
   " scheme
-  colorscheme torte
+  colorscheme lucario
 
   " NERDTree
   let g:NERDTreeShowBookmarks=1
