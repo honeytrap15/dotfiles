@@ -1,0 +1,31 @@
+#!/bin/bash
+
+TMUX_CONF=~/.tmux.conf
+ZSH_CONF=~/.zshrc
+NVIM_CONF=~/.config/nvim
+CONF_DIR=$(cd $(dirname ${0}); pwd)
+CUI_CONF_BIN_DIR=~/.cui-conf-bin
+GIT_CONF=~/.gitconfig
+
+function create_link () {
+  if [ -e $2 ]; then
+    echo "$2 is exists."
+  else
+    echo "ln -nfs $CONF_DIR/$1 $2"
+    ln -nfs $CONF_DIR/$1 $2
+  fi
+}
+
+
+# create global config dir for linux
+if [ ! -e ~/.config ]; then
+  mkdir ~/.config
+fi
+
+# create symlinks
+create_link tmux/tmux.conf $TMUX_CONF
+create_link zsh/zshrc $ZSH_CONF
+create_link nvim $NVIM_CONF
+create_link scripts $CUI_CONF_BIN_DIR
+create_link git/gitconfig $GIT_CONF
+
