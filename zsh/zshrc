@@ -2,6 +2,9 @@ export PROMPT="%# "
 export SHELL="/usr/bin/zsh"
 export TERM="screen-256color"
 
+# 自作スクリプトのパス
+export PATH=$PATH:~/.cui-conf-bin
+
 # curl用
 setopt nonomatch
 
