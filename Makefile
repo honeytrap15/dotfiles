@@ -19,17 +19,6 @@ install_develop:
 	apt install -y\
 		clang\
 		cmake\
-		git\
-		gperf\
-		libjemalloc-dev\
-		libluajit-5.1-dev\
-		libmsgpack-dev\
-		libtermkey-dev\
-		libunibilium-dev\
-		libuv1-dev\
-		libvterm-dev\
-		lua-lpeg\
-		lua-mpack\
 		tmux\
 		pkg-config\
 		python3\
@@ -39,12 +28,11 @@ install_develop:
 
 install_nvim_head:
 	echo
-	rm -rf /tmp/neovim
 	cd /tmp;\
 		git clone $(NEOVIM_REPO)
-	mkdir /tmp/neovim/build
-	cd /tmp/neovim/build; cmake ..;\
-		make CMAKE_BUILD_TYPE=RelWithDebInfo;\
+	cd /tmp/neovim; rm -rf build;\
+		make clean;\
+		make CMAKE_BUILD_TYPE=Release;\
 		make install
 	rm -rf /tmp/neovim
 
