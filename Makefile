@@ -6,7 +6,7 @@ NEOVIM_REPO="https://github.com/neovim/neovim.git"
 	install_develop\
 	install_nvim_head
 
-all: install_usual install_develop install_nvim_head create_symlink
+all: install_usual install_develop install_nvim_head create_symlink setup_neovim
 
 install_usual:
 	echo
@@ -27,6 +27,7 @@ install_develop:
 		pkg-config\
 		python3\
 		python3-pip\
+		unzip\
 		zsh
 	echo "---- install depends packages end   ----"
 
@@ -43,3 +44,7 @@ install_nvim_head:
 create_symlink:
 	echo
 	./create_symlink
+
+setup_neovim:
+	echo
+	./nvim/nvim_setup
