@@ -19,6 +19,8 @@ install_develop:
 	apt install -y\
 		clang\
 		cmake\
+		curl\
+		wget\
 		libtool\
 		liblua5.3-dev\
 		tmux\
