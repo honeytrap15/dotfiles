@@ -10,7 +10,7 @@ jobs:
           command: apt update
       - run:
           name: minimum depends
-          command: apt install -y build-essential
+          command: apt install -y build-essential git
       - run:
           name: make test
           command: make
