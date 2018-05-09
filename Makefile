@@ -20,6 +20,7 @@ install_develop:
 		clang\
 		cmake\
 		libtool\
+		liblua5.3-dev\
 		tmux\
 		pkg-config\
 		python3\
