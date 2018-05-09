@@ -19,7 +19,7 @@ install_develop:
 	apt install -y\
 		clang\
 		cmake\
-		git\
+		libtool\
 		tmux\
 		pkg-config\
 		python3\
