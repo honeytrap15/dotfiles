@@ -17,12 +17,14 @@ install_develop:
 	echo
 	echo "---- install depends packages start ----"
 	apt install -y\
+		automake\
 		clang\
 		cmake\
 		curl\
 		wget\
 		libtool\
 		liblua5.3-dev\
+		m4\
 		tmux\
 		pkg-config\
 		python3\
