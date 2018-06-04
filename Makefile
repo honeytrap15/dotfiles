@@ -11,6 +11,9 @@ all: install_usual install_develop install_nvim_head create_symlink setup_neovim
 install_usual:
 	echo
 	echo "---- install usual packages start ----"
+	apt install -y\
+		clang-format\
+		tig
 	echo "---- install usual packages end   ----"
 
 install_develop:
@@ -43,6 +46,7 @@ install_nvim_head:
 		make install
 	rm -rf /tmp/neovim
 
+.PHONY: create_symlink
 create_symlink:
 	echo
 	./create_symlink
