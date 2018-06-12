@@ -21,6 +21,7 @@ set laststatus=2
 set wildmode=list:longest
 set ambiwidth=double
 inoremap <C-a> <Esc>v gg <S-g>
+inoremap jj <Esc>
 
 " search config
 set ignorecase

@@ -89,3 +89,6 @@ repo = 'vim-scripts/DoxygenToolkit.vim'
 
 [[plugins]]
 repo = 'justmao945/vim-clang'
+
+[[plugins]]
+repo = 'thinca/vim-quickrun'
