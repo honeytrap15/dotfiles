@@ -2,16 +2,20 @@
 NEOVIM_REPO="https://github.com/neovim/neovim.git"
 
 .SILENT:\
+	add_backports\
 	install_usual\
 	install_develop\
-	install_nvim_head
+	install_nvim_stable\
+	setup_neovim
 
-all: install_usual install_develop install_nvim_stable create_symlink setup_neovim
+all: add_backports install_usual install_develop install_nvim_stable create_symlink setup_neovim
 
 add_backports:
 	echo
-	echo "---- add backports repo ----"
+	echo "---- add backports repo start ----"
 	bash -c "echo deb http://deb.debian.org/debian stretch-backports main >> /etc/apt/sources.list"
+	echo "OK"
+	echo "---- add backports repo end ----"
 
 install_usual:
 	echo
