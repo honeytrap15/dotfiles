@@ -6,7 +6,7 @@ NEOVIM_REPO="https://github.com/neovim/neovim.git"
 	install_develop\
 	install_nvim_head
 
-all: install_usual install_develop install_nvim_head create_symlink setup_neovim
+all: install_usual install_develop install_nvim_stable create_symlink setup_neovim
 
 install_usual:
 	echo
@@ -36,15 +36,13 @@ install_develop:
 		zsh
 	echo "---- install depends packages end   ----"
 
-install_nvim_head:
+install_nvim_stable:
 	echo
-	cd /tmp;\
-		git clone $(NEOVIM_REPO)
-	cd /tmp/neovim; rm -rf build;\
-		make clean;\
-		make CMAKE_BUILD_TYPE=Release;\
-		make install
-	rm -rf /tmp/neovim
+	echo "---- install neovim ----"
+	wget https://github.com/neovim/neovim/releases/download/nightly/nvim-linux64.tar.gz
+	tar zxf nvim-linux64.tar.gz
+	mv nvim-linux64 /usr/local/bin
+	rm nvim-linux64.tar.gz
 
 .PHONY: create_symlink
 create_symlink:
