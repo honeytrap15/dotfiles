@@ -13,6 +13,8 @@ install_usual:
 	echo "---- install usual packages start ----"
 	apt install -y\
 		clang-format\
+		golang\
+		nim\
 		tig
 	echo "---- install usual packages end   ----"
 
