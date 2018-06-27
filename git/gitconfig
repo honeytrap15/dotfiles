@@ -1,3 +1,6 @@
 [user]
 	email = tkgm15h@gmail.com
 	name = honeytrap15
+
+[url "git@bitbucket.org:groove-x/"]
+	insteadOf = "https://bitbucket.org/groove-x/"
