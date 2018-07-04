@@ -118,12 +118,10 @@ else
   " ClangFormat
   nnoremap <S-l> :ClangFormat<Return>
 
-  " Doxgen tool
-  nnoremap <C-i> :Dox<Return>
-
   " vim-clang
   let g:clang_c_options = '-std=c99'
   let g:clang_cpp_options = '-std=c++11'
+  let g:clang_format#code_style = 'google'
 
 endif
 
