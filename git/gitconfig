@@ -3,4 +3,4 @@
 	name = takegami
 
 [url "git@bitbucket.org:groove-x/"]
-   insteadOf = "https://bitbucket.org/groove-x/"
+	insteadOf = "https://bitbucket.org/groove-x/"

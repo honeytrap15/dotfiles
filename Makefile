@@ -36,7 +36,6 @@ install_develop:
 		golang\
 		libtool\
 		m4\
-		nim\
 		tmux\
 		pkg-config\
 		python3\
@@ -54,6 +53,9 @@ install_nvim_stable:
 	mv nvim-linux64/bin/nvim /usr/local/bin
 	rm nvim-linux64.tar.gz
 	rm -rf nvim-linux64
+
+install_choosenim:
+	curl https://nim-lang.org/choosenim/init.sh -sSf | sh
 
 .PHONY: create_symlink
 create_symlink:
