@@ -123,10 +123,10 @@ else
   let g:clang_cpp_options = '-std=c++11'
   let g:clang_format#code_style = 'google'
 
+  " golang
+  let g:go_fmt_command = "goimports"
+
 endif
 
 " terminal
 tnoremap <silent> <ESC> <C-\><C-n>
-
-" golang
-let g:go_fmt_command = "goimports"
