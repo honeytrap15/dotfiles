@@ -33,6 +33,7 @@ install_develop:
 		clang-format\
 		cmake\
 		curl\
+		exuberant-ctags \
 		golang\
 		libtool\
 		m4\
