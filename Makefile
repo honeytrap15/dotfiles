@@ -43,7 +43,9 @@ install_develop:
 		unzip\
 		wget\
 		zsh
+	pip3 install neovim
 	echo "---- install depends packages end   ----"
+
 
 install_nvim_stable:
 	echo
