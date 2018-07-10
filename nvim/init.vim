@@ -116,13 +116,11 @@ else
   " nim
   let g:nvim_nim_highlighter_semantics=1
 
-  " ClangFormat
-  nnoremap <S-l> :ClangFormat<Return>
-
   " vim-clang
   let g:clang_c_options = '-std=c99'
   let g:clang_cpp_options = '-std=c++11'
   let g:clang_format#code_style = 'google'
+  autocmd BufWritePre *.cpp,*.hpp,*.c,*.h ClangFormat
 
   " golang
   let g:go_fmt_command = "goimports"

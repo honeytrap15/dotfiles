@@ -25,7 +25,6 @@ repo = 'jonathanfilip/vim-lucius'
 [[plugins]]
 repo = 'scrooloose/nerdtree'
 
-# js
 [[plugins]]
 repo = 'pangloss/vim-javascript'
 
