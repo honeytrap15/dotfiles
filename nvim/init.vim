@@ -20,9 +20,13 @@ set showmatch
 set laststatus=2
 set wildmode=list:longest
 set ambiwidth=double
-inoremap <C-a> <Esc>v gg <S-g>
+noremap <C-a> gg v <S-g> $
+inoremap <C-a> <Esc>gg v <S-g> $
 inoremap jj <Esc>
 noremap <C-k> :cn<CR><Esc>
+
+" ctags
+set tags=tags
 
 " search config
 set ignorecase
