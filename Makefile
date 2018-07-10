@@ -8,7 +8,7 @@ NEOVIM_REPO="https://github.com/neovim/neovim.git"
 	install_nvim_stable\
 	setup_neovim
 
-all: add_backports install_usual install_develop install_nvim_stable create_symlink setup_neovim
+all: add_backports install_usual install_develop install_nvim_stable install_peco create_symlink setup_neovim
 
 add_backports:
 	echo
@@ -41,12 +41,21 @@ install_develop:
 		pkg-config\
 		python3\
 		python3-pip\
+		silversearcher-ag \
 		unzip\
 		wget\
 		zsh
 	pip3 install neovim
 	echo "---- install depends packages end   ----"
 
+install_peco:
+	echo
+	echo "---- install peco ----"
+	wget https://github.com/peco/peco/releases/download/v0.5.3/peco_linux_amd64.tar.gz
+	tar zxf peco_linux_amd64.tar.gz
+	mv peco_linux_amd64/peco /usr/local/bin
+	rm peco_linux_amd64.tar.gz
+	rm -rf peco_linux_amd64
 
 install_nvim_stable:
 	echo

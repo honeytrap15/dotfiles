@@ -1,4 +1,17 @@
-export PROMPT="%# "
+# vcs_infoロード
+autoload -Uz vcs_info    
+
+# PROMPT変数内で変数参照する
+setopt prompt_subst
+
+# vcsの表示
+zstyle ':vcs_info:*' formats '(%F{green}%b%f)'
+
+# プロンプト表示直前にvcs_info呼び出し
+precmd() { vcs_info }
+
+# プロンプト表示
+export PROMPT='${vcs_info_msg_0_}%# '
 export SHELL="/usr/bin/zsh"
 export TERM="screen-256color"
 
