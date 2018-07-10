@@ -91,3 +91,4 @@ export NVM_DIR="/home/hiro/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # This loads nvm
 
 cd $HOME
+

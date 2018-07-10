@@ -22,6 +22,7 @@ set wildmode=list:longest
 set ambiwidth=double
 inoremap <C-a> <Esc>v gg <S-g>
 inoremap jj <Esc>
+noremap <C-k> :cn<CR><Esc>
 
 " search config
 set ignorecase

@@ -1,0 +1,5 @@
+GO_SRC="${GOPATH}/src"
+CHOSEN=$(find ${GO_SRC} -mindepth 3 -maxdepth 3 -type d | sed -E "s|${GO_SRC}/||g" | ag -v "\.[^/]+$" | peco)
+if [ "$CHOSEN" != "" ]; then
+cd ${GO_SRC}/${CHOSEN}
+fi
