@@ -45,7 +45,7 @@ install_develop:
 		unzip\
 		wget\
 		zsh
-	pip3 install neovim
+	pip3 install neovim pip3 pyflakes
 	echo "---- install depends packages end   ----"
 
 install_peco:
@@ -68,6 +68,9 @@ install_nvim_stable:
 
 install_choosenim:
 	curl https://nim-lang.org/choosenim/init.sh -sSf | sh
+
+install_pyenv:
+	curl -L https://raw.githubusercontent.com/pyenv/pyenv-installer/master/bin/pyenv-installer | bash
 
 .PHONY: create_symlink
 create_symlink:

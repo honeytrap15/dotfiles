@@ -20,7 +20,6 @@ set showmatch
 set laststatus=2
 set wildmode=list:longest
 set ambiwidth=double
-noremap <C-a> gg v <S-g> $
 inoremap <C-a> <Esc>gg v <S-g> $
 inoremap jj <Esc>
 noremap <C-k> :cn<CR><Esc>
@@ -121,13 +120,22 @@ else
   let g:nvim_nim_highlighter_semantics=1
 
   " vim-clang
-  let g:clang_c_options = '-std=c99'
-  let g:clang_cpp_options = '-std=c++11'
+  let g:clang_c_options = '
+        \ -std=c99
+        \ -Iinclude
+        \'
+  let g:clang_cpp_options = '
+        \-std=c++11
+        \ -Iinclude
+        \'
   let g:clang_format#code_style = 'google'
   autocmd BufWritePre *.cpp,*.hpp,*.c,*.h ClangFormat
 
   " golang
   let g:go_fmt_command = "goimports"
+
+  " python
+  let g:syntastic_python_checkers = ['pyflakes', 'pep8']
 
 endif
 

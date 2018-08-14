@@ -92,6 +92,11 @@ export PATH=$PATH:$GOPATH/bin
 # nimlang
 export PATH=$PATH:~/.nimble/bin:/sbin:/usr/sbin
 
+# python
+export PATH="$HOME/.pyenv/bin:$PATH"
+eval "$(pyenv init -)"
+eval "$(pyenv virtualenv-init -)"
+
 # ros
 if [[ -e /opt/ros ]]; then
   source /opt/ros/kinetic/setup.zsh
@@ -119,3 +124,9 @@ function gocd() {
   cd ${GO_SRC}/${CHOSEN}
   fi
 }
+
+# The next line updates PATH for the Google Cloud SDK.
+if [ -f '/home/hiro/Downloads/google-cloud-sdk/path.zsh.inc' ]; then source '/home/hiro/Downloads/google-cloud-sdk/path.zsh.inc'; fi
+
+# The next line enables shell command completion for gcloud.
+if [ -f '/home/hiro/Downloads/google-cloud-sdk/completion.zsh.inc' ]; then source '/home/hiro/Downloads/google-cloud-sdk/completion.zsh.inc'; fi

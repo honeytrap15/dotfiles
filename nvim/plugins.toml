@@ -94,3 +94,13 @@ repo = 'thinca/vim-quickrun'
 
 [[plugins]]
 repo = 'honeytrap15/nvim-nimble'
+
+[[plugins]]
+repo = 'sophacles/vim-processing'
+
+[[plugins]]
+repo = 'scrooloose/syntastic'
+
+[[plugins]]
+repo = 'pdurbin/vim-tsv'
+
