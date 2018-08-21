@@ -10,6 +10,8 @@ NEOVIM_REPO="https://github.com/neovim/neovim.git"
 
 all: add_backports install_usual install_develop install_nvim_stable install_peco create_symlink setup_neovim
 
+non-root: install_nvim_stable install_choosenim install_pyenv
+
 add_backports:
 	echo
 	echo "---- add backports repo start ----"
@@ -45,7 +47,7 @@ install_develop:
 		unzip\
 		wget\
 		zsh
-	pip3 install neovim pip3 pyflakes
+	pip3 install neovim pyflakes
 	echo "---- install depends packages end   ----"
 
 install_peco:
