@@ -105,5 +105,5 @@ repo = 'scrooloose/syntastic'
 repo = 'pdurbin/vim-tsv'
 
 [[plugins]]
-repo = 'venshell/vim-pydocstring'
+repo = 'heavenshell/vim-pydocstring'
 
