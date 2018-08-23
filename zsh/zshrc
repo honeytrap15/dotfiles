@@ -59,6 +59,7 @@ alias ll='ls -l'
 alias vim='nvim'
 alias pbcopy='xsel -bi'
 
+export VIM=/usr/share/nvim
 export CLICOLOR=1
 export LSCOLORS=DxGxcxdxCxegedabagacad
 

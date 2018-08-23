@@ -8,9 +8,9 @@ NEOVIM_REPO="https://github.com/neovim/neovim.git"
 	install_nvim_stable\
 	setup_neovim
 
-all: add_backports install_usual install_develop install_nvim_stable install_peco create_symlink setup_neovim
+all: add_backports install_usual install_develop install_nvim_stable install_peco
 
-non-root: install_nvim_stable install_choosenim install_pyenv
+non-root:create_symlink install_choosenim install_pyenv setup_neovim
 
 add_backports:
 	echo
