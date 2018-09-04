@@ -107,3 +107,5 @@ repo = 'pdurbin/vim-tsv'
 [[plugins]]
 repo = 'heavenshell/vim-pydocstring'
 
+[[plugins]]
+repo = 'fisadev/vim-isort'

@@ -136,6 +136,8 @@ else
 
   " python
   let g:syntastic_python_checkers = ['pyflakes', 'pep8']
+  let g:vim_isort_map = '<C-i>'
+  let g:vim_isort_python_version = 'python3'
 
 endif
 
