@@ -141,12 +141,12 @@ else
   let g:vim_isort_map = '<C-i>'
   let g:vim_isort_python_version = 'python3'
 
-  function! Autopep8()
-      call Preserve(':silent %!autopep8 -')
-  endfunction
-
   " Shift + F で自動修正
   autocmd FileType python nnoremap <S-f> :call Autopep8()<CR>
+
+  " Denite
+  nnoremap <C-o> :Denite file<Enter>
+
 
 endif
 
