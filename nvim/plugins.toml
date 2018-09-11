@@ -109,3 +109,6 @@ repo = 'heavenshell/vim-pydocstring'
 
 [[plugins]]
 repo = 'fisadev/vim-isort'
+
+[[plugins]]
+repo = 'vim-syntastic/syntastic'

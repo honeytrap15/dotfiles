@@ -129,15 +129,24 @@ else
         \ -Iinclude
         \'
   let g:clang_format#code_style = 'google'
-  autocmd BufWritePre *.cpp,*.hpp,*.c,*.h ClangFormat
+  "autocmd BufWritePre *.cpp,*.hpp,*.c,*.h ClangFormat
 
   " golang
   let g:go_fmt_command = "goimports"
 
   " python
-  let g:syntastic_python_checkers = ['pyflakes', 'pep8']
+  let g:syntastic_python_pep8_args = '--ignore=E501'
+  let g:syntastic_python_flake8_args = '--ignore=E501'
+  let g:syntastic_python_checkers = ['pep8', 'flake8']
   let g:vim_isort_map = '<C-i>'
   let g:vim_isort_python_version = 'python3'
+
+  function! Autopep8()
+      call Preserve(':silent %!autopep8 -')
+  endfunction
+
+  " Shift + F で自動修正
+  autocmd FileType python nnoremap <S-f> :call Autopep8()<CR>
 
 endif
 
