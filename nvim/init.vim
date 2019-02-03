@@ -42,7 +42,6 @@ set tabstop=2
 set shiftwidth=2
 
 " tab config
-map <C-t> :tabnew<Return>
 map <C-q> :tabclose<Return>
 map <C-h> :tabprevious<Return>
 map <C-l> :tabnext<Return>
@@ -135,6 +134,8 @@ else
   let g:go_fmt_command = "goimports"
 
   " python
+  let g:python_host_prog = '/usr/bin/python2'
+  let g:python3_host_prog = '/home/hiro/.pyenv/shims/python3'
   let g:syntastic_python_pep8_args = '--ignore=E501'
   let g:syntastic_python_flake8_args = '--ignore=E501'
   let g:syntastic_python_checkers = ['pep8', 'flake8']
@@ -145,7 +146,7 @@ else
   autocmd FileType python nnoremap <S-f> :call Autopep8()<CR>
 
   " Denite
-  nnoremap <C-o> :Denite file<Enter>
+  nnoremap <C-o> :Denite buffer<Enter>
 
 
 endif

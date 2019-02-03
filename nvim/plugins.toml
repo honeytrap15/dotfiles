@@ -115,3 +115,6 @@ repo = 'fisadev/vim-isort'
 
 [[plugins]]
 repo = 'vim-syntastic/syntastic'
+
+[[plugins]]
+repo = 'dzeban/vim-log-syntax'
