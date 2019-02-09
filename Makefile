@@ -36,7 +36,6 @@ install_develop:
 		cmake\
 		curl\
 		exuberant-ctags \
-		golang\
 		libtool\
 		m4\
 		tmux\
