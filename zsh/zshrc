@@ -50,14 +50,11 @@ setopt correct
 setopt no_beep
 
 # エイリアス
-case ${OSTYPE} in
-  linux*)
-  alias ls='ls --color -lhGF'
-    ;;
-esac
+alias ls='ls --color -lhGF'
 alias ll='ls -l'
 alias vim='nvim'
 alias pbcopy='xsel -bi'
+alias delete-merged-branch="git branch --merged | grep -v '*' | xargs -I % git branch -d %"
 
 export VIM=/usr/share/nvim
 export CLICOLOR=1
@@ -79,19 +76,11 @@ if [[ ! -n $TMUX ]]; then
   tmux attach-session -t "$ID"
 fi
 
-# mac only
-if [[ -e $HOME/.nodebrew ]]; then
-  nodebrew use 8.9.0 > /dev/null
-  export PATH=$PATH:$HOME/.nodebrew/current/bin
-fi
-
 # golang
+export GOPATH="$HOME/go"
 export GOENV_ROOT="$HOME/.goenv"
-export PATH="$GOENV_ROOT/bin:$PATH"
+export PATH="$GOENV_ROOT/bin:$GOPATH/bin:$PATH"
 eval "$(goenv init -)"
-export GOPATH=$HOME/go
-export GOROOT=$( go env GOROOT )
-export PATH=$PATH:$GOPATH/bin
 
 # nimlang
 export PATH=$PATH:~/.nimble/bin:/sbin:/usr/sbin
@@ -104,18 +93,10 @@ eval "$(pyenv virtualenv-init -)"
 export PYTHON="$(which python)"
 export PYTHON3="$(which python3)"
 
-# ros
-if [[ -e /opt/ros ]]; then
-  source /opt/ros/kinetic/setup.zsh
-fi
-
-# git
-alias delete-merged-branch="git branch --merged | grep -v '*' | xargs -I % git branch -d %"
-
-export NVM_DIR="/home/hiro/.nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # This loads nvm
-
-cd $HOME
+# nodejs
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 
 function gitcd() {
   GIT_SRC="${HOME}/git"
@@ -124,6 +105,7 @@ function gitcd() {
   cd ${GIT_SRC}/${CHOSEN}
 fi
 }
+
 function gocd() {
   GO_SRC="${GOPATH}/src"
   CHOSEN=$(find ${GO_SRC} -mindepth 3 -maxdepth 3 -type d | sed -E "s|${GO_SRC}/||g" | ag -v "\.[^/]+$" | peco)
