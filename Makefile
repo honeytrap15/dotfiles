@@ -64,6 +64,7 @@ install_nvim_stable:
 	wget https://github.com/neovim/neovim/releases/download/nightly/nvim-linux64.tar.gz
 	tar zxf nvim-linux64.tar.gz
 	mv nvim-linux64/bin/nvim /usr/local/bin
+	mv nvim-linux64/share/nvim /usr/local/share
 	rm nvim-linux64.tar.gz
 	rm -rf nvim-linux64
 
@@ -72,6 +73,14 @@ install_choosenim:
 
 install_pyenv:
 	curl -L https://raw.githubusercontent.com/pyenv/pyenv-installer/master/bin/pyenv-installer | bash
+
+install_goenv:
+	git clone https://github.com/syndbg/goenv.git ~/.goenv
+
+install_nvm:
+	mkdir -p ~/.nvm
+	curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.33.11/install.sh | bash
+	command -v nvm
 
 .PHONY: create_symlink
 create_symlink:

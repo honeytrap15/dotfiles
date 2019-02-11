@@ -56,7 +56,7 @@ alias vim='nvim'
 alias pbcopy='xsel -bi'
 alias delete-merged-branch="git branch --merged | grep -v '*' | xargs -I % git branch -d %"
 
-export VIM=/usr/share/nvim
+export VIM=/usr/local/share/nvim
 export CLICOLOR=1
 export LSCOLORS=DxGxcxdxCxegedabagacad
 
