@@ -32,6 +32,12 @@ repo = 'scrooloose/nerdtree'
 repo = 'pangloss/vim-javascript'
 
 [[plugins]]
+repo = 'jelera/vim-javascript-syntax'
+
+[[plugins]]
+repo = 'othree/yajs'
+
+[[plugins]]
 repo = 'moll/vim-node'
 
 [[plugins]]

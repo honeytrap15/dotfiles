@@ -142,8 +142,14 @@ else
   let g:vim_isort_map = '<C-i>'
   let g:vim_isort_python_version = 'python3'
 
+  " jsx
+  let g:jsx_ext_required = 1
+  let g:jsx_pragma_required = 1
+  let g:vim_jsx_pretty_colorful_config = 1
+
   " Shift + F で自動修正
   autocmd FileType python nnoremap <S-f> :call Autopep8()<CR>
+  autocmd FileType javascript.jsx nnoremap <S-f> :%!prettier %<CR>
 
   " Denite
   nnoremap <C-o> :Denite buffer<Enter>

@@ -6,6 +6,7 @@ NVIM_CONF=~/.config/nvim
 CONF_DIR=$(cd $(dirname ${0}); pwd)
 CUI_CONF_BIN_DIR=~/.cui-conf-bin
 GIT_CONF=~/.gitconfig
+CTAGS_CONF=~/.ctags
 
 function create_link () {
   if [ -e $2 ]; then
@@ -28,4 +29,4 @@ create_link zsh/zshrc $ZSH_CONF
 create_link nvim $NVIM_CONF
 create_link scripts $CUI_CONF_BIN_DIR
 create_link git/gitconfig $GIT_CONF
-
+create_link ctags/ctags $CTAGS_CONF
