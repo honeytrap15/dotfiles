@@ -147,6 +147,10 @@ else
   let g:jsx_pragma_required = 1
   let g:vim_jsx_pretty_colorful_config = 1
 
+  " json
+  set conceallevel=0
+  let g:vim_json_syntax_conceal = 0
+
   " Shift + F で自動修正
   autocmd FileType python nnoremap <S-f> :call Autopep8()<CR>
   autocmd FileType javascript.jsx nnoremap <S-f> :%!prettier %<CR>
