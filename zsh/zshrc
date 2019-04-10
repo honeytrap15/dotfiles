@@ -80,6 +80,7 @@ fi
 export GOPATH="$HOME/go"
 export GOENV_ROOT="$HOME/.goenv"
 export PATH="$GOENV_ROOT/bin:$GOPATH/bin:$PATH"
+export GO111MODULE=on
 eval "$(goenv init -)"
 
 # nimlang

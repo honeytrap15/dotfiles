@@ -158,7 +158,7 @@ else
 
   " python
   let g:python_host_prog = '/usr/bin/python2'
-  let g:python3_host_prog = '/usr/bin/python3'
+  let g:python3_host_prog = '/usr/bin/python3.7'
   let g:syntastic_python_pep8_args = '--ignore=E501'
   let g:syntastic_python_flake8_args = '--ignore=E501'
   let g:syntastic_python_checkers = ['pep8', 'flake8']
