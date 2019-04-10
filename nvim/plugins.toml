@@ -8,7 +8,14 @@ repo = 'Shougo/denite.nvim'
 repo = 'Shougo/neosnippet-snippets'
 
 [[plugins]]
+repo = 'Shougo/vimproc.vim'
+build = 'make'
+
+[[plugins]]
 repo = 'cespare/vim-toml'
+
+[[plugins]]
+repo = 'tpope/vim-fugitive'
 
 [[plugins]]
 repo = 'Haron-Prime/Antares'
@@ -27,6 +34,9 @@ repo = 'jonathanfilip/vim-lucius'
 
 [[plugins]]
 repo = 'scrooloose/nerdtree'
+
+[[plugins]]
+repo = 'Xuyuanp/nerdtree-git-plugin'
 
 [[plugins]]
 repo = 'pangloss/vim-javascript'
@@ -63,22 +73,7 @@ let g:template_free_pattern = 'template'
 repo = 'freeo/vim-kalisi'
 
 [[plugins]]
-repo = 'miyakogi/seiya.vim'
-
-[[plugins]]
 repo = 'aklt/plantuml-syntax'
-
-[[plugins]]
-repo = 'tpope/vim-fugitive'
-
-[[plugins]]
-repo = "airblade/vim-gitgutter"
-
-[[plugins]]
-repo = 'vim-airline/vim-airline'
-
-[[plugins]]
-repo = 'vim-airline/vim-airline-themes'
 
 [[plugins]]
 repo = 'mhartington/nvim-typescript'
@@ -124,3 +119,6 @@ repo = 'vim-syntastic/syntastic'
 
 [[plugins]]
 repo = 'dzeban/vim-log-syntax'
+
+[[plugins]]
+repo = 'isRuslan/vim-es6'

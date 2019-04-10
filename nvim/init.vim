@@ -1,7 +1,6 @@
 " color config
 syntax on
 set t_Co=256
-set background=dark
 
 " vim config
 set number
@@ -17,7 +16,6 @@ set showcmd
 set cursorline
 set smartindent
 set showmatch
-set laststatus=2
 set wildmode=list:longest
 set ambiwidth=double
 inoremap <C-a> <Esc>gg v <S-g> $
@@ -42,12 +40,13 @@ set tabstop=2
 set shiftwidth=2
 
 " tab config
+map <C-t> :tabnew<Return>:NERDTree<Return>
 map <C-q> :tabclose<Return>
 map <C-h> :tabprevious<Return>
 map <C-l> :tabnext<Return>
 
 " filetype
-au BufNewFile,BufRead *.pu setf plantuml
+au BufNewFile,BufRead,BufWinEnter *.pu setf plantuml
 
 " dein config
 function s:setup_dein()
@@ -77,10 +76,11 @@ else
 
   " scheme
   colorscheme lucario
+  highlight LineNr ctermfg=226 ctermbg=025
 
   " NERDTree
   let g:NERDTreeShowBookmarks=1
-  autocmd vimenter * NERDTree|normal gg3j
+  autocmd vimenter * NERDTree
   nnoremap <C-n> :NERDTreeFocus<Enter>
   nnoremap <C-c> :NERDTreeToggle<Enter>
 
@@ -98,9 +98,6 @@ else
           \ | endif
   augroup END
 
-  " Seiya vim
-  let g:seiya_auto_enable=1
-
   " airline
   set laststatus=2
   let g:airline_powerline_fonts = 1
@@ -113,8 +110,34 @@ else
     let g:airline_symbols = {}
   endif
 
+  " unicode symbols
+  let g:airline_left_sep = '»'
+  let g:airline_left_sep = '▶'
+  let g:airline_right_sep = '«'
+  let g:airline_right_sep = '◀'
+  let g:airline_symbols.crypt = '🔒'
+  let g:airline_symbols.linenr = '␊'
+  let g:airline_symbols.linenr = '␤'
+  let g:airline_symbols.linenr = '¶'
+  let g:airline_symbols.maxlinenr = '☰'
+  let g:airline_symbols.maxlinenr = ''
+  let g:airline_symbols.branch = '⎇'
+  let g:airline_symbols.paste = 'ρ'
+  let g:airline_symbols.paste = 'Þ'
+  let g:airline_symbols.paste = '∥'
+  let g:airline_symbols.spell = 'Ꞩ'
+  let g:airline_symbols.notexists = '∄'
+  let g:airline_symbols.whitespace = 'Ξ'
+
   " powerline symbols
-  let g:airline_symbols.branch = ''
+  let g:airline_left_sep = ''
+  let g:airline_left_alt_sep = ''
+  let g:airline_right_sep = ''
+  let g:airline_right_alt_sep = ''
+  let g:airline_symbols.branch = ''
+  let g:airline_symbols.readonly = ''
+  let g:airline_symbols.linenr = ''
+
   " nim
   let g:nvim_nim_highlighter_semantics=1
 
@@ -158,6 +181,17 @@ else
   " Denite
   nnoremap <C-o> :Denite buffer<Enter>
 
+  " QuickRun
+  let g:quickrun_config = {}
+  let g:quickrun_config._ = {
+        \ 'runner'    : 'vimproc',
+        \ 'runner/vimproc/updatetime' : 60,
+        \ 'outputter' : 'error',
+        \ 'outputter/error/success' : 'buffer',
+        \ 'outputter/error/error'   : 'quickfix',
+        \ 'outputter/buffer/close_on_empty' : 1,
+        \ 'outputter/buffer/split': ':botright 8sp'
+        \ }
 
 endif
 
