@@ -52,11 +52,11 @@ setopt no_beep
 # エイリアス
 alias ls='ls --color -lhGF'
 alias ll='ls -l'
-alias vim='nvim'
+#alias vim='nvim'
 alias pbcopy='xsel -bi'
 alias delete-merged-branch="git branch --merged | grep -v '*' | xargs -I % git branch -d %"
 
-export VIM=/usr/local/share/nvim
+#export VIM=/usr/local/share/nvim
 export CLICOLOR=1
 export LSCOLORS=DxGxcxdxCxegedabagacad
 
