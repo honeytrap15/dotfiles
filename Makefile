@@ -8,7 +8,7 @@ NEOVIM_REPO="https://github.com/neovim/neovim.git"
 	install_nvim_stable\
 	setup_neovim
 
-all: add_backports install_usual install_develop install_nvim_stable install_peco install_fonts
+all: add_backports install_usual install_develop install_nvim_stable install_peco
 
 non-root:create_symlink install_choosenim install_pyenv setup_neovim
 
@@ -90,7 +90,3 @@ create_symlink:
 setup_neovim:
 	echo
 	./nvim/nvim_setup
-
-install_fonts:
-	gitclone https://github.com/powerline/fonts.git --depth=1
-	cd ~/git/github.com/powerline/fonts && ./install.sh
