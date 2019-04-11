@@ -12,6 +12,9 @@ repo = 'Shougo/vimproc.vim'
 build = 'make'
 
 [[plugins]]
+repo = 'aonemd/kuroi.vim'
+
+[[plugins]]
 repo = 'cespare/vim-toml'
 
 [[plugins]]
