@@ -4,3 +4,8 @@
 
 [url "git@bitbucket.org:groove-x/"]
 	insteadOf = "https://bitbucket.org/groove-x/"
+
+[url "git@github.com:groove-x/"]
+	insteadOf = "https://github.com/groove-x/"
+[core]
+	editor = nvim

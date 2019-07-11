@@ -55,6 +55,7 @@ alias ll='ls -l'
 #alias vim='nvim'
 alias pbcopy='xsel -bi'
 alias delete-merged-branch="git branch --merged | grep -v '*' | xargs -I % git branch -d %"
+alias dockerc="docker-compose"
 
 #export VIM=/usr/local/share/nvim
 export CLICOLOR=1
@@ -79,18 +80,17 @@ fi
 # golang
 export GOPATH="$HOME/go"
 export GOENV_ROOT="$HOME/.goenv"
-export PATH="$GOENV_ROOT/bin:$GOPATH/bin:$PATH"
-export GO111MODULE=on
+export PATH="$GOENV_ROOT/bin:$PATH"
 eval "$(goenv init -)"
+export PATH="$GOPATH/bin:$PATH"
 
 # nimlang
-export PATH=$PATH:~/.nimble/bin:/sbin:/usr/sbin
+export PATH=$PATH:~/.nimble/bin
 
 # python
 export PYENV_ROOT="$HOME/.pyenv"
-export PATH=$PATH:${PYENV_ROOT}/bin
+export PATH=${PYENV_ROOT}/bin:$PATH
 eval "$(pyenv init -)"
-eval "$(pyenv virtualenv-init -)"
 export PYTHON="$(which python)"
 export PYTHON3="$(which python3)"
 

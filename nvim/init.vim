@@ -36,11 +36,10 @@ nmap <Esc><Esc> :nohlsearch<CR><Esc>
 " coding config
 set list listchars=tab:\▸\-,trail:･,eol:↲,extends:»,precedes:«,nbsp:%
 set expandtab
-set tabstop=2
+set tabstop=4
 set shiftwidth=2
 
 " tab config
-map <C-t> :tabnew<Return>:NERDTree<Return>
 map <C-q> :tabclose<Return>
 map <C-h> :tabprevious<Return>
 map <C-l> :tabnext<Return>
@@ -158,7 +157,7 @@ else
 
   " python
   let g:python_host_prog = '/usr/bin/python2'
-  let g:python3_host_prog = '/usr/bin/python3.7'
+  let g:python3_host_prog = $PYTHON3
   let g:syntastic_python_pep8_args = '--ignore=E501'
   let g:syntastic_python_flake8_args = '--ignore=E501'
   let g:syntastic_python_checkers = ['pep8', 'flake8']
