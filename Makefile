@@ -45,6 +45,7 @@ install_develop:
 		silversearcher-ag \
 		unzip\
 		wget\
+		xsel \
 		zsh
 	pip3 install neovim pyflakes
 	echo "---- install depends packages end   ----"

@@ -1,3 +1,5 @@
+export PATH=$PATH:/usr/sbin
+
 # vcs_infoロード
 autoload -Uz vcs_info
 
@@ -52,7 +54,7 @@ setopt no_beep
 # エイリアス
 alias ls='ls --color -lhGF'
 alias ll='ls -l'
-#alias vim='nvim'
+alias vim='nvim'
 alias pbcopy='xsel -bi'
 alias delete-merged-branch="git branch --merged | grep -v '*' | xargs -I % git branch -d %"
 alias dockerc="docker-compose"
@@ -78,7 +80,6 @@ if [[ ! -n $TMUX ]]; then
 fi
 
 # golang
-export GOPATH="$HOME/go"
 export GOENV_ROOT="$HOME/.goenv"
 export PATH="$GOENV_ROOT/bin:$PATH"
 eval "$(goenv init -)"
@@ -120,3 +121,5 @@ if [ -f '/home/hiro/google-cloud-sdk/path.zsh.inc' ]; then . '/home/hiro/google-
 
 # The next line enables shell command completion for gcloud.
 if [ -f '/home/hiro/google-cloud-sdk/completion.zsh.inc' ]; then . '/home/hiro/google-cloud-sdk/completion.zsh.inc'; fi
+
+source ${HOME}/.zshenv
