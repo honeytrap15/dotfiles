@@ -100,6 +100,9 @@ export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 
+# rust
+source $HOME/.cargo/env
+
 function gitcd() {
   GIT_SRC="${HOME}/git"
   CHOSEN=$(find ${GIT_SRC} -mindepth 3 -maxdepth 3 -type d | sed -E "s|${GIT_SRC}/||g" | ag -v "\.[^/]+$" | peco)
@@ -121,5 +124,3 @@ if [ -f '/home/hiro/google-cloud-sdk/path.zsh.inc' ]; then . '/home/hiro/google-
 
 # The next line enables shell command completion for gcloud.
 if [ -f '/home/hiro/google-cloud-sdk/completion.zsh.inc' ]; then . '/home/hiro/google-cloud-sdk/completion.zsh.inc'; fi
-
-source ${HOME}/.zshenv
