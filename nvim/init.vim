@@ -24,7 +24,7 @@ nmap <Esc><Esc> :nohlsearch<CR><Esc>
 au BufNewFile *.sh set fileformat=unix
 
 " user command
-command! Config edit ~/.config/ngim/init.vim
+command! Config edit ~/.config/nvim/init.vim
 
 " terminal config
 tnoremap <silent> <ESC> <C-\><C-n>
@@ -33,8 +33,10 @@ augroup TerminalStuff
 augroup END
 
 " filetype conf
-autocmd FileType json,javascript,vue setlocal shiftwidth=2 ts=2 expandtab
+autocmd FileType json,javascript,vue,typescript setlocal shiftwidth=2 ts=2 expandtab
 autocmd FileType yaml,yml setlocal shiftwidth=2 ts=2 expandtab
+autocmd FileType python setlocal shiftwidth=4 ts=4 expandtab
+autocmd FileType html setlocal shiftwidth=2 ts=2 expandtab
 
 " --------- vim-plug ---------------
 call plug#begin('~/.vim/plugged')
@@ -54,6 +56,7 @@ Plug 'mattn/vim-goimports'
 Plug 'stsewd/isort.nvim'
 Plug 'skywind3000/asyncrun.vim'
 Plug 'rust-lang/rust.vim'
+Plug 'thinca/vim-quickrun'
 
 call plug#end()
 
@@ -83,6 +86,18 @@ endif
 " lsp
 nmap <C-]> :LspDefinition<CR>
 
+" pyls-all
+let g:lsp_settings = {
+\   'pyls-all': {
+\     'workspace_config': {
+\       'pyls': {
+\         'configurationSources': ['flake8']
+\       }
+\     }
+\   },
+\}
+
+
 " autocmd
 au BufNewFile,BufRead *.sh set fileformat=unix
 au BufNewFile,BufRead *.py set fileformat=unix
@@ -97,4 +112,3 @@ augroup TerminalStuff
 augroup END
 
 command! PhpFmt !phpcbf %
-autocmd BufWritePost *.php PhpFmt
