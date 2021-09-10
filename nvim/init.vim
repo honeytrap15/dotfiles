@@ -57,6 +57,7 @@ Plug 'stsewd/isort.nvim'
 Plug 'skywind3000/asyncrun.vim'
 Plug 'rust-lang/rust.vim'
 Plug 'thinca/vim-quickrun'
+Plug 'beanworks/vim-phpfmt'
 
 call plug#end()
 
@@ -111,4 +112,5 @@ augroup TerminalStuff
     autocmd TermOpen * setlocal nonumber norelativenumber
 augroup END
 
-command! PhpFmt !phpcbf %
+let g:phpfmt_standard = 'PSR2'
+let g:phpfmt_autosave = 1
