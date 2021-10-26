@@ -1,9 +1,0 @@
---append=yes
---exclude=*min.js
---exclude=node_modules
---exclude=build
---recurse=yes
---langmap=JavaScript:.js.json.jsx.html
---langdef=JSX
---langmap=JSX:.jsx
---regex-JSX=/^[ \t]*([a-z]+[ \t]+)*class[ \t]+([A-Za-z0-9_]+)[ \t]*([^)])/\2/c,class,classes/
