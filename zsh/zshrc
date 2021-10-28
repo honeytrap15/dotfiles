@@ -92,3 +92,5 @@ function gocd() {
   cd ${GO_SRC}/${CHOSEN}
   fi
 }
+
+cd $HOME

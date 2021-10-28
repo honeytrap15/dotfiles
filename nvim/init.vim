@@ -31,12 +31,18 @@ tnoremap <silent> <ESC> <C-\><C-n>
 augroup TerminalStuff
     autocmd TermOpen * setlocal nonumber norelativenumber
 augroup END
+set termguicolors
+let &t_8f = "\<Esc>[38;2;%lu;%lu;%lum"
+let &t_8b = "\<Esc>[48;2;%lu;%lu;%lum"
 
 " filetype conf
 autocmd FileType json,javascript,vue,typescript setlocal shiftwidth=2 ts=2 expandtab
 autocmd FileType yaml,yml setlocal shiftwidth=2 ts=2 expandtab
 autocmd FileType python setlocal shiftwidth=4 ts=4 expandtab
 autocmd FileType html setlocal shiftwidth=2 ts=2 expandtab
+
+" python path
+let g:python3_host_prog = "/usr/bin/python3"
 
 " --------- vim-plug ---------------
 call plug#begin('~/.vim/plugged')
