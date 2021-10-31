@@ -64,6 +64,7 @@ Plug 'skywind3000/asyncrun.vim'
 Plug 'rust-lang/rust.vim'
 Plug 'thinca/vim-quickrun'
 Plug 'beanworks/vim-phpfmt'
+Plug 'Shougo/vimproc.vim', {'do' : 'make'}
 
 call plug#end()
 
@@ -90,33 +91,46 @@ if s:is_plugged('rust.vim')
     let g:rustfmt_autosave = 1
 endif
 
+" quickrun
+if s:is_plugged('vim-quickrun') && s:is_plugged('vimproc.vim')
+    let g:quickrun_config = get(g:, 'quickrun_config', {})
+    let g:quickrun_config._ = {
+      \ 'runner'    : 'vimproc',
+      \ 'runner/vimproc/updatetime' : 60,
+      \ 'outputter' : 'error',
+      \ 'outputter/error/success' : 'buffer',
+      \ 'outputter/error/error'   : 'quickfix',
+      \ 'outputter/buffer/split'  : ':rightbelow 8sp',
+      \ 'outputter/buffer/close_on_empty' : 1,
+      \ }
+    noremap <A-r> :QuickRun<CR>
+endif
+
 " lsp
 nmap <C-]> :LspDefinition<CR>
 
+" php
+let g:lsp_settings_filetype_php = 'intelephense'
+
 " pyls-all
 let g:lsp_settings = {
-\   'pyls-all': {
+\   'pylsp-all': {
 \     'workspace_config': {
-\       'pyls': {
+\       'pylsp': {
 \         'configurationSources': ['flake8']
 \       }
 \     }
 \   },
 \}
 
-
 " autocmd
 au BufNewFile,BufRead *.sh set fileformat=unix
 au BufNewFile,BufRead *.py set fileformat=unix
+au BufNewFile,BufRead *.launch set filetype=xml tabstop=2 shiftwidth=2
 
 " user command
 command! Config edit ~\AppData\Local\nvim\init.vim
 command! GConfig edit ~\AppData\Local\nvim\ginit.vim
-
-tnoremap <silent> <ESC> <C-\><C-n>
-augroup TerminalStuff
-    autocmd TermOpen * setlocal nonumber norelativenumber
-augroup END
 
 let g:phpfmt_standard = 'PSR2'
 let g:phpfmt_autosave = 1
