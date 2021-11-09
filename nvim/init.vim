@@ -19,6 +19,7 @@ set tags=./tags
 
 " keybind
 nmap <Esc><Esc> :nohlsearch<CR><Esc>
+nmap <C-i> :Isort<CR>
 
 " autocmd
 au BufNewFile *.sh set fileformat=unix
@@ -126,7 +127,7 @@ let g:lsp_settings = {
 " autocmd
 au BufNewFile,BufRead *.sh set fileformat=unix
 au BufNewFile,BufRead *.py set fileformat=unix
-au BufNewFile,BufRead *.launch set filetype=xml tabstop=2 shiftwidth=2
+au BufNewFile,BufRead *.launch,*.test set filetype=xml tabstop=2 shiftwidth=2
 
 " user command
 command! Config edit ~\AppData\Local\nvim\init.vim
