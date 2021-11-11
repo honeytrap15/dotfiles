@@ -8,6 +8,7 @@ CUI_CONF_BIN_DIR=~/.cui-conf-bin
 GIT_CONF=~/.gitconfig
 VIM_CONF=~/.config/vim
 PYTHON_CONF=~/.python
+PHP_CONF=~/.php
 
 function create_link () {
   if [ -e $2 ]; then
@@ -31,3 +32,4 @@ create_link nvim $NVIM_CONF
 create_link scripts $CUI_CONF_BIN_DIR
 create_link git/gitconfig $GIT_CONF
 create_link python/python $PYTHON_CONF
+create_link php/php $PHP_CONF

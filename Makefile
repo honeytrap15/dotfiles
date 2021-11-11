@@ -40,9 +40,10 @@ install_npm:
 install_pyenv:
 	apt install -y libffi-dev libssl-dev zlib1g-dev liblzma-dev libbz2-dev libreadline-dev libsqlite3-dev libopencv-dev tk-dev
 	git clone git://github.com/yyuu/pyenv.git ${USERHOME}/.pyenv
-	chown -R hiro:hiro ${USERHOME}
+	chown -R hiro:hiro ${USERHOME}/.pyenv
 
 install_phpenv:
-	apt install -y libxml-dev libkrb5-dev libssl-dev libsqlite3-dev libbz2-dev libcurl4-openssl-dev libpng-dev libjpeg-dev libonig-dev libxslt1-dev
-	curl -L https://raw.githubusercontent.com/phpenv/phpenv-installer/master/bin/phpenv-installer | bash
-	mv /root/.phpenv ${USERHOME}/
+	apt install -y libxml2-dev libkrb5-dev libssl-dev libsqlite3-dev libbz2-dev libcurl4-openssl-dev libpng-dev libjpeg-dev libfreetype6-dev libonig-dev libxslt1-dev libtidy-dev libzip-dev
+	git clone git://github.com/phpenv/phpenv.git ${USERHOME}/.phpenv
+	git clone git://github.com/php-build/php-build $(phpenv root)/plugins/php-build
+	chown -R hiro:hiro ${USERHOME}/.phpenv
