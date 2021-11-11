@@ -47,3 +47,5 @@ install_phpenv:
 	git clone git://github.com/phpenv/phpenv.git ${USERHOME}/.phpenv
 	git clone git://github.com/php-build/php-build $(phpenv root)/plugins/php-build
 	chown -R hiro:hiro ${USERHOME}/.phpenv
+	curl -sS https://getcomposer.org/installer | php
+	mv ./composer.phar /usr/local/bin/composer
