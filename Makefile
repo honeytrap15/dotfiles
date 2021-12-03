@@ -24,12 +24,11 @@ install_nvim:
 	rm nvim-linux64.tar.gz
 	rm -rf nvim-linux64
 	sh -c 'curl -fLo ${USERHOME}/.local/share/nvim/site/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim'
-	chown -R hiro:hiro ${USERHOME}/.local/share/nvim/site/autoload/plug.vim
-
+	chown -R hiro:hiro ${USERHOME}/.local
 install_python:
 	apt install -y python3-pip
-	pip install -U pip
-	pip install neovim isort
+	python3 -m pip install -U pip
+	python3 -m pip install neovim isort
 
 install_npm:
 	apt install -y nodejs npm
