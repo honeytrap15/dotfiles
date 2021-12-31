@@ -32,6 +32,7 @@ tnoremap <silent> <ESC> <C-\><C-n>
 augroup TerminalStuff
     autocmd TermOpen * setlocal nonumber norelativenumber
 augroup END
+
 set termguicolors
 let &t_8f = "\<Esc>[38;2;%lu;%lu;%lum"
 let &t_8b = "\<Esc>[48;2;%lu;%lu;%lum"
@@ -41,6 +42,7 @@ autocmd FileType json,javascript,vue,typescript setlocal shiftwidth=2 ts=2 expan
 autocmd FileType yaml,yml setlocal shiftwidth=2 ts=2 expandtab
 autocmd FileType python setlocal shiftwidth=4 ts=4 expandtab
 autocmd FileType html setlocal shiftwidth=2 ts=2 expandtab
+autocmd FileType cpp setlocal shiftwidth=2 ts=2 expandtab
 
 " python path
 let g:python3_host_prog = "/usr/bin/python3"
@@ -66,6 +68,7 @@ Plug 'rust-lang/rust.vim'
 Plug 'thinca/vim-quickrun'
 Plug 'beanworks/vim-phpfmt'
 Plug 'Shougo/vimproc.vim', {'do' : 'make'}
+Plug 'liuchengxu/vista.vim'
 
 call plug#end()
 
@@ -109,6 +112,12 @@ endif
 
 " lsp
 nmap <C-]> :LspDefinition<CR>
+nmap <C-[> :LspPeekDefinition<CR>
+nmap <C-L> :LspDocumentFormatSync<CR>
+let g:lsp_diagnostics_enabled = 1
+let g:lsp_diagnostics_echo_cursor = 1
+"let g:lsp_log_verbose = 1
+"let g:lsp_log_file = expand('~/vim-lsp.log')
 
 " php
 let g:lsp_settings_filetype_php = 'intelephense'
@@ -135,3 +144,24 @@ command! GConfig edit ~\AppData\Local\nvim\ginit.vim
 
 let g:phpfmt_standard = 'PSR2'
 let g:phpfmt_autosave = 1
+
+" vim outline
+let g:symbols_outline = {
+    \ "highlight_hovered_item": v:true,
+    \ "show_guides": v:true,
+    \ "position": 'right',
+    \ "auto_preview": v:true,
+    \ "keymaps": {
+        \ "close": "<Esc>",
+        \ "goto_location": "<Cr>",
+        \ "focus_location": "o",
+        \ "hover_symbol": "<C-space>",
+        \ "rename_symbol": "r",
+        \ "code_actions": "a",
+    \ },
+    \ "lsp_blacklist": [],
+\ }
+
+" vista
+nmap <C-o> :Vista vim_lsp<CR>
+let g:vista_sidebar_width = 50

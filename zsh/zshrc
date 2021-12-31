@@ -15,7 +15,6 @@ precmd() { vcs_info }
 # プロンプト表示
 export PROMPT='${vcs_info_msg_0_}%# '
 export SHELL="/usr/bin/zsh"
-export TERM="screen-256color"
 
 # 自作スクリプトのパス
 export PATH=$PATH:~/.cui-conf-bin
@@ -60,22 +59,6 @@ alias dockerc="docker-compose"
 
 export CLICOLOR=1
 export LSCOLORS=DxGxcxdxCxegedabagacad
-
-# tmux
-if [[ ! -n $TMUX ]]; then
-  # get the IDs
-  ID="`tmux list-sessions`"
-  if [[ -z "$ID" ]]; then
-    tmux new-session && exit
-  fi
-  create_new_session="Create New Session"
-  ID="$ID\n${create_new_session}:"
-  ID="`echo $ID | $PERCOL | cut -d: -f1`"
-  if [[ "$ID" = "${create_new_session}" ]]; then
-    tmux new-session && exit
-  fi
-  tmux attach-session -t "$ID"
-fi
 
 function gitcd() {
   GIT_SRC="${HOME}/git"
