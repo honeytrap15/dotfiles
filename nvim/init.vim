@@ -42,6 +42,7 @@ autocmd FileType json,javascript,vue,typescript setlocal shiftwidth=2 ts=2 expan
 autocmd FileType yaml,yml setlocal shiftwidth=2 ts=2 expandtab
 autocmd FileType python setlocal shiftwidth=4 ts=4 expandtab
 autocmd FileType html setlocal shiftwidth=2 ts=2 expandtab
+autocmd FileType c setlocal shiftwidth=2 ts=2 expandtab
 autocmd FileType cpp setlocal shiftwidth=2 ts=2 expandtab
 
 " python path
@@ -50,25 +51,25 @@ let g:python3_host_prog = "/usr/bin/python3"
 " --------- vim-plug ---------------
 call plug#begin('~/.vim/plugged')
 
-Plug 'cocopon/iceberg.vim'
-Plug 'scrooloose/nerdtree'
+Plug 'Shougo/vimproc.vim', {'do' : 'make'}
 Plug 'Xuyuanp/nerdtree-git-plugin'
+Plug 'beanworks/vim-phpfmt'
+Plug 'cocopon/iceberg.vim'
+Plug 'liuchengxu/vista.vim'
+Plug 'mattn/vim-goimports'
+Plug 'mattn/vim-lsp-settings'
+Plug 'prabirshrestha/async.vim'
+Plug 'prabirshrestha/asyncomplete-lsp.vim'
+Plug 'prabirshrestha/asyncomplete.vim'
+Plug 'prabirshrestha/vim-lsp'
+Plug 'rust-lang/rust.vim'
+Plug 'scrooloose/nerdtree'
+Plug 'skywind3000/asyncrun.vim'
+Plug 'stsewd/isort.nvim'
+Plug 'thinca/vim-quickrun'
+Plug 'tpope/vim-dispatch'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
-Plug 'tpope/vim-dispatch'
-Plug 'prabirshrestha/async.vim'
-Plug 'prabirshrestha/asyncomplete.vim'
-Plug 'prabirshrestha/asyncomplete-lsp.vim'
-Plug 'prabirshrestha/vim-lsp'
-Plug 'mattn/vim-lsp-settings'
-Plug 'mattn/vim-goimports'
-Plug 'stsewd/isort.nvim'
-Plug 'skywind3000/asyncrun.vim'
-Plug 'rust-lang/rust.vim'
-Plug 'thinca/vim-quickrun'
-Plug 'beanworks/vim-phpfmt'
-Plug 'Shougo/vimproc.vim', {'do' : 'make'}
-Plug 'liuchengxu/vista.vim'
 
 call plug#end()
 
