@@ -62,7 +62,7 @@ export LSCOLORS=DxGxcxdxCxegedabagacad
 
 function gitcd() {
   GIT_SRC="${HOME}/git"
-  CHOSEN=$(find ${GIT_SRC} -mindepth 3 -maxdepth 3 -type d | sed -E "s|${GIT_SRC}/||g" | ag -v "\.[^/]+$" | peco)
+  CHOSEN=$(find ${GIT_SRC} -mindepth 3 -maxdepth 3 -type d | sed -E "s|${GIT_SRC}/||g" | peco)
   if [ "$CHOSEN" != "" ]; then
   cd ${GIT_SRC}/${CHOSEN}
 fi
