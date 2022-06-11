@@ -19,7 +19,7 @@ set tags=./tags
 
 " keybind
 nmap <Esc><Esc> :nohlsearch<CR><Esc>
-nmap <C-i> :Isort<CR>
+nmap <C-p> :Isort<CR>
 
 " autocmd
 au BufNewFile *.sh set fileformat=unix
@@ -70,6 +70,8 @@ Plug 'thinca/vim-quickrun'
 Plug 'tpope/vim-dispatch'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
+Plug 'lambdalisue/gina.vim'
+
 
 call plug#end()
 
@@ -128,20 +130,24 @@ let g:lsp_settings = {
 \   'pylsp-all': {
 \     'workspace_config': {
 \       'pylsp': {
-\         'configurationSources': ['flake8']
-\       }
-\     }
+\         'configurationSources': ['flake8'],
+\         'plugins': {
+\           'pycodestyle': {
+\              'ignore': ['E501'],
+\           },
+\         },
+\       },
+\     },
 \   },
+\   'typescript-language-server': {
+\   }
 \}
 
 " autocmd
 au BufNewFile,BufRead *.sh set fileformat=unix
 au BufNewFile,BufRead *.py set fileformat=unix
 au BufNewFile,BufRead *.launch,*.test set filetype=xml tabstop=2 shiftwidth=2
-
-" user command
-command! Config edit ~\AppData\Local\nvim\init.vim
-command! GConfig edit ~\AppData\Local\nvim\ginit.vim
+au BufNewFile,BufRead *.tsx set tabstop=2 shiftwidth=2
 
 let g:phpfmt_standard = 'PSR2'
 let g:phpfmt_autosave = 1
