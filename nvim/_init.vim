@@ -11,27 +11,18 @@ set cursorline
 set cursorcolumn
 set nobackup
 set noundofile
-
 set list
 set listchars=tab:»-,trail:.,eol:↲,extends:»,precedes:«,nbsp:%
-
-set tags=./tags
 
 " keybind
 nmap <Esc><Esc> :nohlsearch<CR><Esc>
 nmap <C-p> :Isort<CR>
 
+" syntax
+syntax sync minlines=300
+
 " autocmd
 au BufNewFile *.sh set fileformat=unix
-
-" user command
-command! Config edit ~/.config/nvim/init.vim
-
-" terminal config
-tnoremap <silent> <ESC> <C-\><C-n>
-augroup TerminalStuff
-    autocmd TermOpen * setlocal nonumber norelativenumber
-augroup END
 
 set termguicolors
 let &t_8f = "\<Esc>[38;2;%lu;%lu;%lum"
@@ -51,27 +42,32 @@ let g:python3_host_prog = "/usr/bin/python3"
 " --------- vim-plug ---------------
 call plug#begin('~/.vim/plugged')
 
-Plug 'Shougo/vimproc.vim', {'do' : 'make'}
-Plug 'Xuyuanp/nerdtree-git-plugin'
-Plug 'beanworks/vim-phpfmt'
+" scheme
 Plug 'cocopon/iceberg.vim'
-Plug 'liuchengxu/vista.vim'
+
+" golang
 Plug 'mattn/vim-goimports'
-Plug 'mattn/vim-lsp-settings'
-Plug 'prabirshrestha/async.vim'
-Plug 'prabirshrestha/asyncomplete-lsp.vim'
-Plug 'prabirshrestha/asyncomplete.vim'
-Plug 'prabirshrestha/vim-lsp'
+
+" rust
 Plug 'rust-lang/rust.vim'
+
+" filer
 Plug 'scrooloose/nerdtree'
-Plug 'skywind3000/asyncrun.vim'
-Plug 'stsewd/isort.nvim'
-Plug 'thinca/vim-quickrun'
-Plug 'tpope/vim-dispatch'
+Plug 'Xuyuanp/nerdtree-git-plugin'
+
+" lsp
+Plug 'liuchengxu/vista.vim'
+Plug 'neovim/nvim-lspconfig'
+Plug 'williamboman/mason.nvim'
+Plug 'williamboman/mason-lspconfig.nvim'
+Plug 'hrsh7th/nvim-cmp'
+Plug 'hrsh7th/cmp-nvim-lsp'
+Plug 'hrsh7th/vim-vsnip'
+
+" common
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
-Plug 'lambdalisue/gina.vim'
-
+Plug 'sheerun/vim-polyglot'
 
 call plug#end()
 
@@ -96,21 +92,6 @@ endif
 " rust
 if s:is_plugged('rust.vim')
     let g:rustfmt_autosave = 1
-endif
-
-" quickrun
-if s:is_plugged('vim-quickrun') && s:is_plugged('vimproc.vim')
-    let g:quickrun_config = get(g:, 'quickrun_config', {})
-    let g:quickrun_config._ = {
-      \ 'runner'    : 'vimproc',
-      \ 'runner/vimproc/updatetime' : 60,
-      \ 'outputter' : 'error',
-      \ 'outputter/error/success' : 'buffer',
-      \ 'outputter/error/error'   : 'quickfix',
-      \ 'outputter/buffer/split'  : ':rightbelow 8sp',
-      \ 'outputter/buffer/close_on_empty' : 1,
-      \ }
-    noremap <A-r> :QuickRun<CR>
 endif
 
 " lsp
@@ -148,26 +129,6 @@ au BufNewFile,BufRead *.sh set fileformat=unix
 au BufNewFile,BufRead *.py set fileformat=unix
 au BufNewFile,BufRead *.launch,*.test set filetype=xml tabstop=2 shiftwidth=2
 au BufNewFile,BufRead *.tsx set tabstop=2 shiftwidth=2
-
-let g:phpfmt_standard = 'PSR2'
-let g:phpfmt_autosave = 1
-
-" vim outline
-let g:symbols_outline = {
-    \ "highlight_hovered_item": v:true,
-    \ "show_guides": v:true,
-    \ "position": 'right',
-    \ "auto_preview": v:true,
-    \ "keymaps": {
-        \ "close": "<Esc>",
-        \ "goto_location": "<Cr>",
-        \ "focus_location": "o",
-        \ "hover_symbol": "<C-space>",
-        \ "rename_symbol": "r",
-        \ "code_actions": "a",
-    \ },
-    \ "lsp_blacklist": [],
-\ }
 
 " vista
 nmap <C-o> :Vista vim_lsp<CR>
