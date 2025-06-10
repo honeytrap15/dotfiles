@@ -1,0 +1,8 @@
+OUTPUT=$(aws sts get-session-token \
+  --serial-number arn:aws:iam::905418379900:mfa/Pixel6a \
+  --token-code ${2} \
+  --profile ${1})
+
+export AWS_ACCESS_KEY_ID=$(echo $OUTPUT | jq -r .Credentials.AccessKeyId)
+export AWS_SECRET_ACCESS_KEY=$(echo $OUTPUT | jq -r .Credentials.SecretAccessKey)
+export AWS_SESSION_TOKEN=$(echo $OUTPUT | jq -r .Credentials.SessionToken)
