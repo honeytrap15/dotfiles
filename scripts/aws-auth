@@ -1,5 +1,5 @@
 OUTPUT=$(aws sts get-session-token \
-  --serial-number arn:aws:iam::905418379900:mfa/Pixel6a \
+  --serial-number arn:aws:iam::520582163110:mfa/SP \
   --token-code ${2} \
   --profile ${1})
 

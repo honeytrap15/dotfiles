@@ -1,0 +1,15 @@
+#!/bin/bash
+
+
+if [ -f ~/.ssh-agent ]; then
+    . ~/.ssh-agent
+fi
+if [ -z "$SSH_AGENT_PID" ] || ! kill -0 $SSH_AGENT_PID >& /dev/null; then
+    ssh-agent > ~/.ssh-agent
+    . ~/.ssh-agent
+fi
+ssh-add -l >& /dev/null || ssh-add
+
+for filepath in `find ${HOME}/.ssh-keys/ -name '*.pem'`;do
+  ssh-add $filepath >& /dev/null
+done

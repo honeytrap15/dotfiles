@@ -10,6 +10,8 @@ vim.opt.shiftwidth = 4
 vim.opt.tabstop = 4
 vim.opt.autoindent = true
 vim.opt.clipboard = vim.opt.clipboard + 'unnamed'
+vim.g.clipboard = '/mnt/c/Windows/System32/clip.exe'
+
 vim.opt.hlsearch = true
 vim.opt.expandtab = true
 vim.opt.swapfile = true
@@ -26,19 +28,13 @@ vim.opt.termguicolors = true
 vim.keymap.set('n', '<Esc><Esc>', ':nohlsearch<CR><Esc>')
 vim.keymap.set('n', '<C-p>', ':Isort<CR>')
 vim.keymap.set('n', '<C-n>', ':NERDTreeFocus<CR>')
-vim.keymap.set('n', '<C-]>', '<cmd>lua vim.lsp.buf.definition()<CR>')
 
 -- plugins
 require("packer").startup(function(use)
-  -- lsp
   use "wbthomason/packer.nvim"
-  use "neovim/nvim-lspconfig"
-  use "williamboman/mason.nvim"
-  use "williamboman/mason-lspconfig.nvim"
 
   -- completion
   use "hrsh7th/nvim-cmp"
-  use "hrsh7th/cmp-nvim-lsp"
   use "hrsh7th/cmp-vsnip"
   use "hrsh7th/cmp-buffer"
   use "hrsh7th/vim-vsnip"
@@ -60,17 +56,6 @@ vim.cmd([[autocmd BufWritePost init.lua source <afile> | PackerCompile]])
 -- api
 vim.api.nvim_command [[colorscheme iceberg]]
 
--- mason
-require("mason").setup()
-require("mason-lspconfig").setup()
-require("mason-lspconfig").setup_handlers {
-  function (server_name) -- default handler (optional)
-    require("lspconfig")[server_name].setup {
-      on_attach = on_attach
-    }
-  end,
-}
-
 -- completion
 vim.opt.completeopt = "menu,menuone,noselect"
 local cmp = require"cmp"
@@ -88,7 +73,6 @@ cmp.setup({
     ["<CR>"] = cmp.mapping.confirm({ select = true }),
   }),
   sources = cmp.config.sources({
-    { name = "nvim_lsp" },
     { name = "vsnip" },
   }, {
     { name = "buffer" },
