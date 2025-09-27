@@ -49,6 +49,7 @@ alias ll='ls -l'
 alias vim='nvim'
 alias delete-merged-branch="git branch --merged | grep -v '*' | xargs -I % git branch -d %"
 alias dockerc="docker-compose"
+alias tmux='tmux -u'
 
 export CLICOLOR=1
 export LSCOLORS=DxGxcxdxCxegedabagacad
